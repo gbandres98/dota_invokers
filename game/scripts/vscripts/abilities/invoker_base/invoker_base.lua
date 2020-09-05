@@ -158,7 +158,7 @@ function invoke( keys )
 			spell_to_be_invoked = "chaos_meteor_datadriven"
 		elseif num_quas_orbs == 1 and num_wex_orbs == 1 and num_exort_orbs == 1 then
 			spell_to_be_invoked = "deafening_blast_datadriven"
-		elseif num_durc_orbs == 3 then
+		elseif num_durc_orbs == 1 and num_quas_orbs == 1 and num_wex_orbs == 1 then
 			spell_to_be_invoked = "faceless_void_chronosphere"
 		end
 

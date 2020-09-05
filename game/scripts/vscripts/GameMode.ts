@@ -26,8 +26,9 @@ export class GameMode {
     }
 
     private configure(): void {
-        GameRules.SetCustomGameTeamMaxPlayers(DOTATeam_t.DOTA_TEAM_GOODGUYS, 1);
-        GameRules.SetCustomGameTeamMaxPlayers(DOTATeam_t.DOTA_TEAM_BADGUYS, 1);
+        GameRules.SetCustomGameTeamMaxPlayers(DOTATeam_t.DOTA_TEAM_GOODGUYS, 5);
+        GameRules.SetCustomGameTeamMaxPlayers(DOTATeam_t.DOTA_TEAM_BADGUYS, 5);
+        GameRules.SetSameHeroSelectionEnabled(true);
 
         GameRules.SetShowcaseTime(0);
         GameRules.SetHeroSelectionTime(heroSelectionTime);
@@ -36,9 +37,13 @@ export class GameMode {
     public OnStateChange(): void {
         const state = GameRules.State_Get();
 
-        // Add lina bot
+        if (state == DOTA_GameState.DOTA_GAMERULES_STATE_HERO_SELECTION) {
+            Tutorial.SelectHero("npc_dota_hero_invoker");
+        }
+
+        // Add invoker bot
         if (IsInToolsMode() && state == DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP) {
-            Tutorial.AddBot("npc_dota_hero_lina", "", "", false);
+            Tutorial.AddBot("npc_dota_hero_invoker", "", "", false);
         }
 
         // Start game once pregame hits
