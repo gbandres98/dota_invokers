@@ -36,6 +36,7 @@
 	[
 		{
 			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 3
 		},
 		{
 			_class = "C_OP_Spin"
