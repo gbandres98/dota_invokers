@@ -140,9 +140,9 @@ function invoke( keys )
 		-- Determine the invoked spell depending on which orbs are in use.
 		if num_quas_orbs == 3 then
 			spell_to_be_invoked = "cold_snap_datadriven"   								--QQQ
-		elseif num_quas_orbs == 2 and num_wex_orbs == 1 then						
+		elseif num_quas_orbs == 2 and num_wex_orbs == 1 then
 			spell_to_be_invoked = "ghost_walk_datadriven"								--QQW
-		elseif num_quas_orbs == 2 and num_exort_orbs == 1 then		
+		elseif num_quas_orbs == 2 and num_exort_orbs == 1 then
 			spell_to_be_invoked = "ice_wall_datadriven"									--QQE
 		elseif num_wex_orbs == 3 then
 			spell_to_be_invoked = "emp_datadriven"										--WWW
@@ -174,16 +174,17 @@ function invoke( keys )
 			spell_to_be_invoked = "furion_teleportation"								--WWD
 		elseif num_quas_orbs == 2 and num_durc_orbs==1 then
 			spell_to_be_invoked = "omniknight_repel"									--QQD
-		elseif num_durc_orbs == 1 and num_exort_orbs==1 and num_quas_orbs then			
+		elseif num_durc_orbs == 1 and num_exort_orbs == 1 and num_quas_orbs == 1 then
 			spell_to_be_invoked = "antimage_blink"										--QED
-		elseif num_durc_orbs == 2 and num_wex_orbs==1 then
+		elseif num_durc_orbs == 1 and num_wex_orbs==1 and num_exort_orbs==1 then
 			spell_to_be_invoked = "puck_phase_shift"									--WED
 		end
 
 		-- If its only 1 max invoke spell then just swap abilities in the same slot
         if spell_to_be_invoked and invoker_slot1 ~= spell_to_be_invoked then
             print(spell_to_be_invoked)
-			caster:SwapAbilities(invoker_slot1, spell_to_be_invoked, false, true)
+            caster:SwapAbilities(invoker_slot1, spell_to_be_invoked, false, true)
+            caster:FindAbilityByName(invoker_slot1):SetLevel(0)
             caster:FindAbilityByName(spell_to_be_invoked):SetLevel(1)
         end
 
