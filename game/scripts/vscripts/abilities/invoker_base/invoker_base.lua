@@ -139,27 +139,45 @@ function invoke( keys )
 
 		-- Determine the invoked spell depending on which orbs are in use.
 		if num_quas_orbs == 3 then
-			spell_to_be_invoked = "cold_snap_datadriven"
-		elseif num_quas_orbs == 2 and num_wex_orbs == 1 then
-			spell_to_be_invoked = "ghost_walk_datadriven"
-		elseif num_quas_orbs == 2 and num_exort_orbs == 1 then
-			spell_to_be_invoked = "ice_wall_datadriven"
+			spell_to_be_invoked = "cold_snap_datadriven"   								--QQQ
+		elseif num_quas_orbs == 2 and num_wex_orbs == 1 then						
+			spell_to_be_invoked = "ghost_walk_datadriven"								--QQW
+		elseif num_quas_orbs == 2 and num_exort_orbs == 1 then		
+			spell_to_be_invoked = "ice_wall_datadriven"									--QQE
 		elseif num_wex_orbs == 3 then
-			spell_to_be_invoked = "emp_datadriven"
+			spell_to_be_invoked = "emp_datadriven"										--WWW
 		elseif num_wex_orbs == 2 and num_quas_orbs == 1 then
-			spell_to_be_invoked = "tornado_datadriven"
+			spell_to_be_invoked = "tornado_datadriven"									--QWW
 		elseif num_wex_orbs == 2 and num_exort_orbs == 1 then
-			spell_to_be_invoked = "alacrity_datadriven"
+			spell_to_be_invoked = "alacrity_datadriven"									--WWE
 		elseif num_exort_orbs == 3 then
-			spell_to_be_invoked = "sun_strike_datadriven"
+			spell_to_be_invoked = "sun_strike_datadriven"								--EEE
 		elseif num_exort_orbs == 2 and num_quas_orbs == 1 then
-			spell_to_be_invoked = "forge_spirit_datadriven"
+			spell_to_be_invoked = "forge_spirit_datadriven"								--QEE
 		elseif num_exort_orbs == 2 and num_wex_orbs == 1 then
-			spell_to_be_invoked = "chaos_meteor_datadriven"
+			spell_to_be_invoked = "chaos_meteor_datadriven"								--WEE
 		elseif num_quas_orbs == 1 and num_wex_orbs == 1 and num_exort_orbs == 1 then
-			spell_to_be_invoked = "deafening_blast_datadriven"
+			spell_to_be_invoked = "deafening_blast_datadriven"							--QWE
 		elseif num_durc_orbs == 1 and num_quas_orbs == 1 and num_wex_orbs == 1 then
-			spell_to_be_invoked = "faceless_void_chronosphere"
+			spell_to_be_invoked = "faceless_void_chronosphere"							--QWD
+		elseif num_durc_orbs == 3 then
+			spell_to_be_invoked = "furion_force_of_nature"								--DDD
+		elseif num_durc_orbs == 2 and num_quas_orbs==1 then
+			spell_to_be_invoked = "faceless_void_time_lock"								--QDD
+		elseif num_durc_orbs == 2 and num_wex_orbs==1 then
+			spell_to_be_invoked = "pugna_decrepify"										--WDD
+		elseif num_durc_orbs == 2 and num_exort_orbs==1 then
+			spell_to_be_invoked = "life_stealer_rage"									--EDD
+		elseif num_exort_orbs == 2 and num_durc_orbs==1 then
+			spell_to_be_invoked = "axe_berserkers_call"									--EED
+		elseif num_wex_orbs == 2 and num_durc_orbs==1 then
+			spell_to_be_invoked = "furion_teleportation"								--WWD
+		elseif num_quas_orbs == 2 and num_durc_orbs==1 then
+			spell_to_be_invoked = "omniknight_repel"									--QQD
+		elseif num_durc_orbs == 1 and num_exort_orbs==1 AND num_quas_orbs then			
+			spell_to_be_invoked = "antimage_blink"										--QED
+		elseif num_durc_orbs == 2 and num_wex_orbs==1 then
+			spell_to_be_invoked = "puck_phase_shift"									--WED
 		end
 
 		-- If its only 1 max invoke spell then just swap abilities in the same slot
