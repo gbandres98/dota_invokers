@@ -25,7 +25,7 @@
 		"Ability14"					"forge_spirit_datadriven"
 		"Ability15"					"ice_wall_datadriven"
 		"Ability16"					"deafening_blast_datadriven"
-		"Ability17"					"faceless_void_chronosphere"
+		"Ability17"					"enigma_black_hole"
 		"ability18"					"furion_force_of_nature"							//DDD
 		"ability19"					"faceless_void_time_lock"							//QDD
 		"ability20" 				"pugna_decrepify"									//WDD

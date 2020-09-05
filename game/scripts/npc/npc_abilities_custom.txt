@@ -21,9 +21,9 @@
 {
 	"Version"		"1"
 
-    "faceless_void_chronosphere"
+    "enigma_black_hole"
     {
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "MaxLevel"                      "1"
     }
     "pugna_decrepify"

@@ -42,6 +42,8 @@ function invoker_replace_orb(keys, particle_filepath)
 	invoker_replace_orb_modifiers(keys)  --Remove and reapply the orb instance modifiers.
 end
 
+
+		
 function invoker_replace_orb_modifiers(keys)
 	--Initialization for storing the orb list, if not already done.
 	if keys.caster.invoked_orbs == nil then
@@ -159,7 +161,7 @@ function invoke( keys )
 		elseif num_quas_orbs == 1 and num_wex_orbs == 1 and num_exort_orbs == 1 then
 			spell_to_be_invoked = "deafening_blast_datadriven"							--QWE
 		elseif num_durc_orbs == 1 and num_quas_orbs == 1 and num_wex_orbs == 1 then
-			spell_to_be_invoked = "faceless_void_chronosphere"							--QWD
+			spell_to_be_invoked = "enigma_black_hole"									--QWD
 		elseif num_durc_orbs == 3 then
 			spell_to_be_invoked = "furion_force_of_nature"								--DDD
 		elseif num_durc_orbs == 2 and num_quas_orbs==1 then
