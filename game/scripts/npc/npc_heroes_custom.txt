@@ -26,15 +26,15 @@
 		"Ability15"					"ice_wall_datadriven"
 		"Ability16"					"deafening_blast_datadriven"
 		"Ability17"					"faceless_void_chronosphere"
-		"ability18"					"furion_force_of_nature"								--DDD		
-		"ability19"					"faceless_void_time_lock"								--QDD	
-		"ability20" 					"pugna_decrepify"										--WDD
-		"ability21"						"life_stealer_rage"									--EDD
-		"ability22"						"axe_berserkers_call"									--EED
-		"ability23"						"furion_teleportation"								--WWD
-		"ability24"						"omniknight_repel"									--QQD
-		"ability25"						"antimage_blink"										--QED
-		"ability26"						"puck_phase_shift"	
+		"ability18"					"furion_force_of_nature"							//DDD
+		"ability19"					"faceless_void_time_lock"							//QDD
+		"ability20" 				"pugna_decrepify"									//WDD
+		"ability21"					"life_stealer_rage"									//EDD
+		"ability22"					"axe_berserkers_call"								//EED
+		"ability23"					"furion_teleportation"								//WWD
+		"ability24"					"omniknight_repel"									//QQD
+		"ability25"					"antimage_blink"									//QED
+		"ability26"			    	"puck_phase_shift"
 	}
 
 }
