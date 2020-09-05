@@ -286,15 +286,18 @@
 		},
 		{
 			m_ChildRef = resource:"particles/invoker_durc_orb_frost.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/invoker_durc_orb_glow_outer.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/invoker_durc_orb_strobe_inner.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/invoker_durc_orb_glow.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/invoker_durc_orb_light.vpcf"
