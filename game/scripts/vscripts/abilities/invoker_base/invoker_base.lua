@@ -174,7 +174,7 @@ function invoke( keys )
 			spell_to_be_invoked = "furion_teleportation"								--WWD
 		elseif num_quas_orbs == 2 and num_durc_orbs==1 then
 			spell_to_be_invoked = "omniknight_repel"									--QQD
-		elseif num_durc_orbs == 1 and num_exort_orbs==1 AND num_quas_orbs then			
+		elseif num_durc_orbs == 1 and num_exort_orbs==1 and num_quas_orbs then			
 			spell_to_be_invoked = "antimage_blink"										--QED
 		elseif num_durc_orbs == 2 and num_wex_orbs==1 then
 			spell_to_be_invoked = "puck_phase_shift"									--WED
