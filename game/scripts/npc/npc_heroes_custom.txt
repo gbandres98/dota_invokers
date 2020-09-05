@@ -1,0 +1,31 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Invoker
+	//=================================================================================================================
+	"npc_dota_hero_test_invoker_lua"
+	{
+		"override_hero"				"npc_dota_hero_invoker"			// Hero to override
+		"Ability1"					"quas_datadriven"
+		"Ability2"					"wex_datadriven"
+		"Ability3"					"exort_datadriven"
+		"Ability4"					"durc_datadriven"
+        "Ability5"					"invoker_empty2_datadriven"
+		"Ability6"					"invoker_empty3_datadriven"
+		"Ability7"					"cold_snap_datadriven"
+		"Ability8"					"ghost_walk_datadriven"
+		"Ability9"					"tornado_datadriven"
+		"Ability10"					"emp_datadriven"
+		"Ability11"					"alacrity_datadriven"
+		"Ability12"					"chaos_meteor_datadriven"
+		"Ability13"					"sun_strike_datadriven"
+		"Ability14"					"forge_spirit_datadriven"
+		"Ability15"					"ice_wall_datadriven"
+		"Ability16"					"deafening_blast_datadriven"
+		"Ability17"					"faceless_void_chronosphere"
+	}
+
+}

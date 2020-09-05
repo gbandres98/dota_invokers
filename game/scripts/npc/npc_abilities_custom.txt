@@ -1,0 +1,30 @@
+// Dota Abilities File
+#base "abilities/invoked/alacrity_datadriven.kv"
+#base "abilities/invoked/chaos_meteor_datadriven.kv"
+#base "abilities/invoked/cold_snap_datadriven.kv"
+#base "abilities/invoked/deafening_blast_datadriven.kv"
+#base "abilities/invoked/emp_datadriven.kv"
+#base "abilities/invoked/forge_spirit_datadriven.kv"
+#base "abilities/invoked/forged_spirit_melting_strike_datadriven.kv"
+#base "abilities/invoked/ghost_walk_datadriven.kv"
+#base "abilities/invoked/ice_wall_datadriven.kv"
+#base "abilities/invoked/sun_strike_datadriven.kv"
+#base "abilities/invoked/tornado_datadriven.kv"
+#base "abilities/invoker_base/durc_datadriven.kv"
+#base "abilities/invoker_base/empty.kv"
+#base "abilities/invoker_base/exort_datadriven.kv"
+#base "abilities/invoker_base/quas_datadriven.kv"
+#base "abilities/invoker_base/wex_datadriven.kv"
+
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+    "faceless_void_chronosphere"
+    {
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                      "1"
+    }
+
+}

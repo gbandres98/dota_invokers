@@ -1,0 +1,94 @@
+"DOTAAbilities"
+{
+
+    "durc_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName" 			"invoker_quas"
+        "MaxLevel"						"7"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"0"
+        "AbilityManaCost"				"0"
+
+        "precache"
+        {
+            "particle"			"particles/units/heroes/hero_invoker/invoker_quas_orb.vpcf"
+        }
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "bonus_magical_damage"				"10.0 20.0 30.0 40.0 50.0 60.0 70.0"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_magical_resistance"			"5 10 15 20 25 30 35"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"						"abilities/invoker_base/durc.lua"
+                "Function"							"invoker_durc_datadriven_on_spell_start"
+            }
+        }
+
+        "OnUpgrade"
+        {
+            "RunScript"
+            {
+                "ScriptFile"						"abilities/invoker_base/durc.lua"
+                "Function"							"invoker_replace_orb_modifiers"
+            }
+        }
+
+        "OnOwnerSpawned"
+        {
+            "RunScript"
+            {
+                "ScriptFile"						"abilities/invoker_base/durc.lua"
+                "Function"							"invoker_replace_orb_modifiers"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_invoker_durc_datadriven"
+            {
+                "Passive"  			"1"
+                "IsHidden" 			"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%bonus_magical_resistance"
+                }
+            }
+            "modifier_invoker_durc_datadriven_instance"
+            {
+                "Passive"  			"0"
+                "IsHidden" 			"0"
+                "IsBuff"			"1"
+                "IsDebuff"			"0"
+                "IsPurgable"		"0"
+                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"		"%bonus_magical_damage"
+                }
+            }
+        }
+    }
+}
