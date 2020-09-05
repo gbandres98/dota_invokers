@@ -14,13 +14,6 @@
 	m_Initializers = 
 	[
 		{
-			_class = "C_INIT_RandomSequence"
-			m_nSequenceMin = 3
-			m_nSequenceMax = 6
-			m_bShuffle = true
-			m_bLinear = true
-		},
-		{
 			_class = "C_INIT_CreateWithinSphere"
 		},
 		{
@@ -48,6 +41,9 @@
 		},
 		{
 			_class = "C_OP_EndCapTimedDecay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
 		},
 	]
 	m_Renderers = 
