@@ -85,4 +85,112 @@
         //----------------------------------------------------------------
         "AttackDesire"        "1.5"   // How much bots want to attack them vs other non-hero things
     }
+
+    //-------------------------------------------------------------------------
+	// Creature Tiny
+	//-------------------------------------------------------------------------
+	"npc_dota_creature_small_tiny"
+	{
+		// Script
+		//"vscripts"					"ai/elemental_tiny_ai.lua"
+
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/tiny/tiny_01/tiny_01.vmdl"
+		"SoundSet"					"Hero_Tiny"
+		"Level"						"1"
+		"ModelScale" 				"1"
+		"ConsideredHero"			"0"
+        "IsSummoned"				"1"
+        "SelectionGroup"			"Invoker_Forged_Spirits"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"mud_golem_hurl_boulder"
+		
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"50"
+		"AttackRate"		"1.500000"
+		"BaseAttackSpeed"		"90"
+		"AttackAnimationPoint"		"0.40000"
+		"AttackAcquisitionRange"		"900"
+		"AttackRange"		"170"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"60"
+		"HealthBarOffset"			"200"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"310"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"
+		"StatusHealthRegen"			"10"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1000"
+		"VisionNighttimeRange"		"1000"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"PathfindingSearchDepthScale"		"1.0"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"DisableResistance"			"95.0"
+
+			//Basic AI State
+			//-----------------------------------------------------------------
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"50.0"
+					"Avoidance"		"0.0"
+					"Support"		"0.0"
+				}
+			}
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"			"13551" 
+				}
+
+			}
+		}
+
+	}
 }

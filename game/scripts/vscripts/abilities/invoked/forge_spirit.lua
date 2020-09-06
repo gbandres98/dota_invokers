@@ -50,14 +50,14 @@ function ForgeSpirit( keys )
 
 	-- Create new spirits
 	for i=1,spirit_count do
-		local forged_spirit = CreateUnitByName("npc_dota_invoker_forged_spirit", caster_location + RandomVector(100), true, caster, caster, caster:GetTeamNumber())
+		local forged_spirit = CreateUnitByName("npc_dota_creature_small_tiny", caster_location + RandomVector(100), true, caster, caster, caster:GetTeamNumber())
 		forged_spirit:SetControllableByPlayer(player, true)
 		forged_spirit:AddNewModifier(caster, ability, "modifier_phased", {duration = 0.03})
 
-		-- Remove the base ability and add datadriven molten strike
-		forged_spirit:RemoveAbility("forged_spirit_melting_strike")
-		forged_spirit:AddAbility("forged_spirit_melting_strike_datadriven") 
-		forged_spirit:FindAbilityByName("forged_spirit_melting_strike_datadriven"):SetLevel(1)
+		---- Remove the base ability and add datadriven molten strike
+		--forged_spirit:RemoveAbility("forged_spirit_melting_strike")
+		--forged_spirit:AddAbility("forged_spirit_melting_strike_datadriven") 
+		--forged_spirit:FindAbilityByName("forged_spirit_melting_strike_datadriven"):SetLevel(1)
 
 		-- Set the damage
 		forged_spirit:SetBaseDamageMin(spirit_damage) 
@@ -66,7 +66,7 @@ function ForgeSpirit( keys )
 		-- Set the health and mana
 		--forged_spirit:SetManaGain(0)
 		--forged_spirit:CreatureLevelUp(1)
-		forged_spirit:SetBaseMaxHealth(spirit_hp)
+		--forged_spirit:SetBaseMaxHealth(spirit_hp)
 
 		-- Set the armor
 		-- Check if we have to add or reduce armor and then apply the positive or negative modifier
@@ -80,8 +80,8 @@ function ForgeSpirit( keys )
 		end
 
 		-- Set the attack range
-		ability:ApplyDataDrivenModifier(caster, forged_spirit, attack_range, {}) 
-		forged_spirit:SetModifierStackCount(attack_range, ability, spirit_attack_range)
+		--ability:ApplyDataDrivenModifier(caster, forged_spirit, attack_range, {}) 
+		--forged_spirit:SetModifierStackCount(attack_range, ability, spirit_attack_range)
 
 		-- Set the spirit duration
 		forged_spirit:AddNewModifier(caster, ability, "modifier_kill", {duration = spirit_duration})
