@@ -16,9 +16,9 @@
         "Ability5"					"invoker_empty2_datadriven"
 		"Ability6"					"invoker_empty3_datadriven"
 		"Ability7"					"cold_snap_datadriven"
-		"Ability8"					"ghost_walk_datadriven"
+		"Ability8"					"vengefulspirit_magic_missile"
 		"Ability9"					"tornado_datadriven"
-		"Ability10"					"emp_datadriven"
+		"Ability10"					"skywrath_mage_concussive_shot"
 		"Ability11"					"alacrity_datadriven"
 		"Ability12"					"chaos_meteor_datadriven"
 		"Ability13"					"sun_strike_datadriven"
@@ -26,15 +26,16 @@
 		"Ability15"					"ice_wall_datadriven"
 		"Ability16"					"deafening_blast_datadriven"
 		"Ability17"					"enigma_black_hole"
-		"ability18"					"furion_force_of_nature"							//DDD
+		"ability18"					"tinker_rearm"										//DDD
 		"ability19"					"faceless_void_time_lock"							//QDD
 		"ability20" 				"pugna_decrepify"									//WDD
 		"ability21"					"life_stealer_rage"									//EDD
-		"ability22"					"axe_berserkers_call"								//EED
-		"ability23"					"furion_teleportation"								//WWD
-		"ability24"					"omniknight_repel"									//QQD
-		"ability25"					"antimage_blink"									//QED
-		"ability26"			    	"puck_phase_shift"
+		"ability22"					"bloodseeker_rupture"								//EED
+		"ability23"					"shadow_demon_shadow_poison"						//WWD
+		"ability24"					"kunkka_x_marks_the_spot"							//QQD
+		"ability25"					"kunkka_return"										//QQD
+		"ability26"					"antimage_blink"									//QED
+		"ability27"			    	"puck_phase_shift"
 	}
 
 }

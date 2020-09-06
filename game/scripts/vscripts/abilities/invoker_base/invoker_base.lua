@@ -143,11 +143,11 @@ function invoke( keys )
 		if num_quas_orbs == 3 then
 			spell_to_be_invoked = "cold_snap_datadriven"   								--QQQ
 		elseif num_quas_orbs == 2 and num_wex_orbs == 1 then
-			spell_to_be_invoked = "ghost_walk_datadriven"								--QQW
+			spell_to_be_invoked = "vengefulspirit_magic_missile"						--QQW
 		elseif num_quas_orbs == 2 and num_exort_orbs == 1 then
 			spell_to_be_invoked = "ice_wall_datadriven"									--QQE
 		elseif num_wex_orbs == 3 then
-			spell_to_be_invoked = "emp_datadriven"										--WWW
+			spell_to_be_invoked = "skywrath_mage_concussive_shot"						--WWW
 		elseif num_wex_orbs == 2 and num_quas_orbs == 1 then
 			spell_to_be_invoked = "tornado_datadriven"									--QWW
 		elseif num_wex_orbs == 2 and num_exort_orbs == 1 then
@@ -163,7 +163,7 @@ function invoke( keys )
 		elseif num_durc_orbs == 1 and num_quas_orbs == 1 and num_wex_orbs == 1 then
 			spell_to_be_invoked = "enigma_black_hole"									--QWD
 		elseif num_durc_orbs == 3 then
-			spell_to_be_invoked = "furion_force_of_nature"								--DDD
+			spell_to_be_invoked = "tinker_rearm"										--DDD
 		elseif num_durc_orbs == 2 and num_quas_orbs==1 then
 			spell_to_be_invoked = "faceless_void_time_lock"								--QDD
 		elseif num_durc_orbs == 2 and num_wex_orbs==1 then
@@ -171,11 +171,11 @@ function invoke( keys )
 		elseif num_durc_orbs == 2 and num_exort_orbs==1 then
 			spell_to_be_invoked = "life_stealer_rage"									--EDD
 		elseif num_exort_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "axe_berserkers_call"									--EED
+			spell_to_be_invoked = "bloodseeker_rupture"									--EED
 		elseif num_wex_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "furion_teleportation"								--WWD
+			spell_to_be_invoked = "shadow_demon_shadow_poison"							--WWD
 		elseif num_quas_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "omniknight_repel"									--QQD
+			spell_to_be_invoked = "kunkka_x_marks_the_spot"									--QQD
 		elseif num_durc_orbs == 1 and num_exort_orbs == 1 and num_quas_orbs == 1 then
 			spell_to_be_invoked = "antimage_blink"										--QED
 		elseif num_durc_orbs == 1 and num_wex_orbs==1 and num_exort_orbs==1 then
