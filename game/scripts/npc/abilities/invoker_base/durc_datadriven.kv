@@ -6,7 +6,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"ability_datadriven"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
         "AbilityTextureName" 			"invoker_durc"
         "MaxLevel"						"1"
 
@@ -32,7 +32,7 @@
             "02"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_magical_resistance"			"35"
+                "bonus_magical_resistance"			"20"
             }
         }
 
@@ -65,16 +65,6 @@
 
         "Modifiers"
         {
-            "modifier_invoker_durc_datadriven"
-            {
-                "Passive"  			"1"
-                "IsHidden" 			"1"
-
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%bonus_magical_resistance"
-                }
-            }
             "modifier_invoker_durc_datadriven_instance"
             {
                 "Passive"  			"0"
@@ -86,7 +76,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"		"%bonus_magical_damage"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%bonus_magical_resistance"
                 }
             }
         }

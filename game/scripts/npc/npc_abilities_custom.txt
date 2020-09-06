@@ -32,17 +32,19 @@
         "AbilityDuration"               "3"
         "AbilityManaCost"				"0"
     }
+
     "pugna_decrepify"
     {
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "MaxLevel"                      "1"
         "AbilityCooldown"				"6.0"
         "AbilityManaCost"				"0"
+        "AbilityCastRange"		        "1200"
     }
 
-    "life_stealer_rage"
+    "life_stealer_rage" // TODO: Rework
     {
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
         "MaxLevel"                      "1"
         "AbilityDuration"               "6"
         "AbilityManaCost"				"0"
@@ -53,39 +55,46 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "MaxLevel"                      "1"
         "AbilityManaCost"				"0"
-       
+        "AbilityChannelTime"			"1.5"
+
     }
 
-    "faceless_void_time_lock"
-    {
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"                      "1"
-        
-        "AbilitySpecial"
+    "pangolier_lucky_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7307"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.65"
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"17"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"2.0"
+				"duration"				"2 3 4 5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"24"
+				"slow"			"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"35"
-                "LinkedSpecialBonus"	"special_bonus_unique_faceless_void_3"
+				"armor"			"3 4 5 6"
 			}
 		}
-    }
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 
     "bloodseeker_rupture"
     {
@@ -103,6 +112,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"movement_damage_pct"		"60"
+                "CalculateSpellDamageTooltip"	"0"
 			}
 		}
     }
@@ -119,37 +129,43 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stack_damage"			"65"
+				"stack_damage"			"105"
+				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_multiply_stacks"	"10"
+				"max_multiply_stacks"	"5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"bonus_stack_damage"	"50"
+				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"250"
+				"radius"				"200"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"1500"
+				"speed"					"3000"
 			}
-			"06"
+			"06" //Damage that is applied every time shadow poison is applied.
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tooltip_duration"		"10.0"
+				"hit_damage"			"50"
+				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
 			}
 		}
     }
 
-    "kunkka_x_marks_the_spot"
+    "kunkka_x_marks_the_spot" //TODO: Remove?
     {
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "MaxLevel"                      "1"
@@ -166,7 +182,7 @@
 				"tooltip_range"				"1000"
 			}
         }
-      
+
     }
 
     "antimage_blink"
@@ -205,7 +221,30 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
+
+        "AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.1"
+
+        "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_missile_speed"	"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_missile_stun"	"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"customval_damage"		"35 45 55"
+			}
+		}
 	}
+
 	"skywrath_mage_concussive_shot"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
@@ -220,7 +259,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
-		{ 
+		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
@@ -234,7 +273,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"1200"
+				"speed"				"900"
 			}
 			"04"
 			{
@@ -245,7 +284,7 @@
 	}
 	"kunkka_return"
 	{
-		"MaxLevel"						"1"	
+		"MaxLevel"						"1"
 	}
 
 }

@@ -10,7 +10,19 @@ declare global {
 @reloadable
 export class GameMode {
     public static Precache(this: void, context: CScriptPrecacheContext) {
-
+        PrecacheUnitByNameSync("npc_dota_hero_tinker", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_vengefulspirit", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_kunkka", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_puck", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_skywrath_mage", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_shadow_demon", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_antimage", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_bloodseeker", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_enigma", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_faceless_void", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_pugna", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_life_stealer", context, undefined);
+        PrecacheUnitByNameSync("npc_dota_hero_enigma", context, undefined);
     }
 
     public static Activate(this: void) {
