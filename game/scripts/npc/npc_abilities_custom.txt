@@ -15,6 +15,7 @@
 #base "abilities/invoker_base/exort_datadriven.kv"
 #base "abilities/invoker_base/quas_datadriven.kv"
 #base "abilities/invoker_base/wex_datadriven.kv"
+#base "abilities/invoked/combo_breaker.kv"
 
 
 "DOTAAbilities"
@@ -40,14 +41,6 @@
         "AbilityCooldown"				"6.0"
         "AbilityManaCost"				"0"
         "AbilityCastRange"		        "1200"
-    }
-
-    "life_stealer_rage" // TODO: Rework
-    {
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
-        "MaxLevel"                      "1"
-        "AbilityDuration"               "6"
-        "AbilityManaCost"				"0"
     }
 
     "tinker_rearm"

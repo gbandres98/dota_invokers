@@ -165,7 +165,7 @@ function invoke( keys )
 		elseif num_durc_orbs == 3 then
 			spell_to_be_invoked = "tinker_rearm"										--DDD
 		elseif num_durc_orbs == 2 and num_quas_orbs==1 then
-			spell_to_be_invoked = "life_stealer_rage"								    --QDD
+			spell_to_be_invoked = "combo_breaker"	    							    --QDD
 		elseif num_durc_orbs == 2 and num_wex_orbs==1 then
 			spell_to_be_invoked = "pugna_decrepify"										--WDD
 		elseif num_durc_orbs == 2 and num_exort_orbs==1 then
