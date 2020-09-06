@@ -34,13 +34,13 @@ export class GameMode {
         GameRules.SetCustomGameTeamMaxPlayers(DOTATeam_t.DOTA_TEAM_BADGUYS, 5);
 
         GameRules.GetGameModeEntity().SetCustomGameForceHero("npc_dota_hero_invoker");
+        GameRules.GetGameModeEntity().SetDaynightCycleDisabled(true);
 
         GameRules.SetShowcaseTime(0);
         GameRules.SetHeroSelectionTime(1);
         GameRules.SetStrategyTime(1);
 
         GameRules.SetHeroRespawnEnabled(false);
-
     }
 
     public OnStateChange(): void {
@@ -137,7 +137,18 @@ export class GameMode {
         Timers.CreateTimer(3,
         () => {
             ShowMessage(`RADIANT ${this.team0score} - ${this.team1score} DIRE`)
-            HeroList.GetAllHeroes().forEach(hero => hero.RespawnHero(false, false));
+
+            HeroList.GetAllHeroes().forEach(hero => {
+                hero.GetAdditionalOwnedUnits().forEach( unit => {
+                    print(unit.GetName());
+                    unit.ForceKill(false);
+                } );
+                hero.RespawnHero(false, false);
+                hero.Purge(true, true, false, true, true);
+                for (let i = 0; i <= 25; i++) {
+                    hero.GetAbilityByIndex(i)?.EndCooldown();
+                }
+            });
             this.restarting = false;
         });
     }
