@@ -23,7 +23,7 @@
 		"Ability12"					"chaos_meteor_datadriven"
 		"Ability13"					"sun_strike_datadriven"
 		"Ability14"					"forge_spirit_datadriven"
-		"Ability15"					"ice_wall_datadriven"
+		"Ability15"					"invoker_sprout_datadriven"
 		"Ability16"					"deafening_blast_datadriven"
 		"Ability17"					"enigma_black_hole"
 		"ability18"					"tinker_rearm"										//DDD
