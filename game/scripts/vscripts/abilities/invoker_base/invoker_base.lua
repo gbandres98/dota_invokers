@@ -43,7 +43,7 @@ function invoker_replace_orb(keys, particle_filepath)
 end
 
 
-		
+
 function invoker_replace_orb_modifiers(keys)
 	--Initialization for storing the orb list, if not already done.
 	if keys.caster.invoked_orbs == nil then
@@ -165,17 +165,17 @@ function invoke( keys )
 		elseif num_durc_orbs == 3 then
 			spell_to_be_invoked = "tinker_rearm"										--DDD
 		elseif num_durc_orbs == 2 and num_quas_orbs==1 then
-			spell_to_be_invoked = "faceless_void_time_lock"								--QDD
+			spell_to_be_invoked = "life_stealer_rage"								    --QDD
 		elseif num_durc_orbs == 2 and num_wex_orbs==1 then
 			spell_to_be_invoked = "pugna_decrepify"										--WDD
 		elseif num_durc_orbs == 2 and num_exort_orbs==1 then
-			spell_to_be_invoked = "life_stealer_rage"									--EDD
+			spell_to_be_invoked = "bloodseeker_rupture"									--EDD
 		elseif num_exort_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "bloodseeker_rupture"									--EED
+			spell_to_be_invoked = "faceless_void_time_lock"								--EED
 		elseif num_wex_orbs == 2 and num_durc_orbs==1 then
 			spell_to_be_invoked = "shadow_demon_shadow_poison"							--WWD
 		elseif num_quas_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "kunkka_x_marks_the_spot"									--QQD
+			spell_to_be_invoked = "kunkka_x_marks_the_spot"								--QQD
 		elseif num_durc_orbs == 1 and num_exort_orbs == 1 and num_quas_orbs == 1 then
 			spell_to_be_invoked = "antimage_blink"										--QED
 		elseif num_durc_orbs == 1 and num_wex_orbs==1 and num_exort_orbs==1 then
