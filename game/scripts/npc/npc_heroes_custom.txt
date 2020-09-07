@@ -9,16 +9,16 @@
 	"npc_dota_hero_test_invoker_lua"
 	{
 		"override_hero"				"npc_dota_hero_invoker"			// Hero to override
-		"Ability1"					"quas_datadriven"
+		"Ability1"					"quas_datadriven"								
 		"Ability2"					"wex_datadriven"
 		"Ability3"					"exort_datadriven"
 		"Ability4"					"durc_datadriven"
         "Ability5"					"invoker_empty2_datadriven"
 		"Ability6"					"invoker_empty3_datadriven"
-		"Ability7"					"cold_snap_datadriven"
-		"Ability8"					"vengefulspirit_magic_missile"
-		"Ability9"					"tornado_datadriven"
-		"Ability10"					"skywrath_mage_concussive_shot"
+		"Ability7"					"cold_snap_datadriven"								//QQQ
+		"Ability8"					"vengefulspirit_magic_missile"						//QQW
+		"Ability9"					"tornado_datadriven"								//QWW
+		"Ability10"					"skywrath_mage_concussive_shot"						//WWW
 		"Ability11"					"alacrity_datadriven"
 		"Ability12"					"chaos_meteor_datadriven"
 		"Ability13"					"sun_strike_datadriven"
