@@ -59,7 +59,7 @@ export class GameMode {
         const state = GameRules.State_Get();
 
         // Add invoker bot
-        if (IsInToolsMode() && state == DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP) {
+        if ((IsInToolsMode() || GetMapName() === "training_ground") && state == DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP) {
             Tutorial.AddBot("npc_dota_hero_invoker", "", "", false);
         }
 
@@ -123,12 +123,14 @@ export class GameMode {
             print(`Team ${player.GetTeamNumber()} lost the round`);
 
             if (player.GetTeamNumber() === 3) {
-                this.team0score++;
+                if (GetMapName() != "training_ground")
+                    this.team0score++;
                 ShowMessage("Radiant wins the round!")
                 if (this.team0score == 5)
                     GameRules.MakeTeamLose(3);
             } else {
-                this.team1score++;
+                if (GetMapName() != "training_ground")
+                    this.team1score++;
                 ShowMessage("Dire wins the round!")
                 if (this.team1score == 5)
                     GameRules.MakeTeamLose(2);
@@ -146,7 +148,9 @@ export class GameMode {
         print("Restarting round...");
         this.restarting = true;
 
-        Timers.CreateTimer(3,
+        const timer = GetMapName() === "training_ground" ? 0.1 : 3
+
+        Timers.CreateTimer(timer,
         () => {
             ShowMessage(`RADIANT ${this.team0score} - ${this.team1score} DIRE`)
 
