@@ -1,107 +1,35 @@
 "DOTAAbilities"
 {
-    "spellshield"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"                     "ability_datadriven"
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "AbilityTextureName"            "antimage_spell_shield"
+	"spellshield"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/invoked/spellshield"
+		"AbilityTextureName"			"antimage_spell_shield"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
 
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+            "soundfile"	"particles/items3_fx/lotus_orb_shield.vpcf"
+			"particle"	"particles/units/heroes/hero_antimage/antimage_spellshield.vpcf"
+			"particle"	"particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf"
+		}
 
-        "precache"
-        {
-            "soundfile"         "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
-            "particle"          "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
-            "particle"          "particles/status_fx/status_effect_life_stealer_rage.vpcf"
-        }
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
+		"AbilityCooldown"				"12"
 
-        // Casting
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"              "0"
-        "AbilityCastRange"              "0"
+        "AbilityChannelTime"            "1.0"
 
-        // Time
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "19"
-
-        // Cost
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "0"
-
-        "AbilityDuration"               "10"
-
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
             "01"
             {
-                "var_type"              "FIELD_INTEGER"
-                "attack_speed_bonus"    "30 45 60 80"
-            }
-            "02"
-            {
                 "var_type"              "FIELD_FLOAT"
-                "duration"              "3.0 4.0 5.0 6.0"
+                "duration"              "10.0"
             }
         }
+	}
 
-        "OnSpellStart"
-        {
-            "FireSound"
-            {
-                "EffectName"    "Hero_LifeStealer.Rage"
-                "Target"        "CASTER"
-            }
-
-            "ApplyModifier"
-            {
-                "ModifierName"  "modifier_rage_ability"
-                "Target"        "CASTER"
-                "Duration"      "%duration"
-            }
-
-        }
-
-        "Modifiers"
-        {
-            "modifier_rage_ability"
-            {
-                "Passive"           "0"
-                "IsHidden"          "0"
-                "IsDebuff"          "0"
-
-                "StatusEffectName"         "particles/status_fx/status_effect_life_stealer_rage.vpcf"
-                "StatusEffectPriority"  "10"
-
-                "OnCreated"
-                {
-                    "AttachEffect"
-                    {
-                        "EffectName"        "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
-                        "EffectAttachType"  "attach_hitloc"
-                        "Target"            "CASTER"
-                        "ControlPointEntities"
-                        {
-                            "CASTER"    "attach_hitloc"
-                            "CASTER"    "attach_hitloc"
-                            "CASTER"    "attach_hitloc"
-                        }
-                    }
-                }
-
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus"
-                }
-
-                "States"
-                {
-                    "MODIFIER_STATE_MAGIC_IMMUNE"        "MODIFIER_STATE_VALUE_ENABLED"
-                }
-            }
-        }
-    }
 }

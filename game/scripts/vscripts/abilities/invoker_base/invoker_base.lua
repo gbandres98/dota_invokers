@@ -175,7 +175,7 @@ function invoke( keys )
 		elseif num_wex_orbs == 2 and num_durc_orbs==1 then
 			spell_to_be_invoked = "windrunner_powershot_datadriven"						--WWD
 		elseif num_quas_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "kunkka_x_marks_the_spot"								--QQD
+			spell_to_be_invoked = "spellshield"         								--QQD
 		elseif num_durc_orbs == 1 and num_exort_orbs == 1 and num_quas_orbs == 1 then
 			spell_to_be_invoked = "antimage_blink"										--QED
 		elseif num_durc_orbs == 1 and num_wex_orbs==1 and num_exort_orbs==1 then

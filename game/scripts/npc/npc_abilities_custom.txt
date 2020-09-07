@@ -18,6 +18,7 @@
 #base "abilities/invoked/combo_breaker.kv"
 #base "abilities/invoked/invoker_sprout_datadriven.kv"
 #base "abilities/invoked/windrunner_powershot_datadriven.kv"
+#base "abilities/invoked/spellshield.kv"
 
 "DOTAAbilities"
 {
