@@ -169,7 +169,7 @@
 			m_ChildRef = resource:"particles/units/heroes/hero_invoker/invoker_tornado_wake.vpcf"
 		},
 	]
-	m_nBehaviorVersion = 5
+	m_nBehaviorVersion = 10
 	m_nFirstMultipleOverride_BackwardCompat = 9
 	m_controlPointConfigurations = 
 	[

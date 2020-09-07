@@ -6,7 +6,7 @@
 function powershot_initialize( keys )
 	local caster = keys.caster
 	local caster_location = caster:GetAbsOrigin()
-	local ability = keys.ability	
+	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 	local point = keys.target_points[1]
 
@@ -24,7 +24,7 @@ function powershot_initialize( keys )
 	ability.powershot_max_range = ability:GetLevelSpecialValueFor( "arrow_range", ability_level )
 	ability.powershot_max_movespeed = ability:GetLevelSpecialValueFor( "arrow_speed", ability_level )
 	ability.powershot_radius = ability:GetLevelSpecialValueFor( "arrow_width", ability_level )
-	ability.powershot_vision_radius = ability:GetLevelSpecialValueFor( "vision_radius", ability_level )	
+	ability.powershot_vision_radius = ability:GetLevelSpecialValueFor( "vision_radius", ability_level )
 	ability.powershot_vision_duration = ability:GetLevelSpecialValueFor( "vision_duration", ability_level )
 	ability.powershot_damage_reduction = ability:GetLevelSpecialValueFor( "damage_reduction", ability_level )
 	ability.powershot_speed_reduction = ability:GetLevelSpecialValueFor( "speed_reduction", ability_level )
@@ -38,7 +38,7 @@ end
 ]]
 function powershot_charge( keys )
 	local ability = keys.ability
-	
+
 	-- Fail check
 	if not ability.powershot_damage_percent then
 		ability.powershot_damage_percent = 0.0
@@ -57,7 +57,7 @@ function powershot_register_unit( keys )
 	local ability = keys.ability
 	local target = keys.target
 	local index = keys.target:entindex()
-	
+
 	-- Register
 	ability.powershot_units_array[ index ] = target
 	ability.powershot_units_hit[ index ] = false
@@ -75,11 +75,11 @@ function powershot_start_traverse( keys )
 	local startAttackSound = "Ability.PowershotPull"
 	local startTraverseSound = "Ability.Powershot"
 	local projectileName = "particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
-	
+
 	-- Stop sound event and fire new one, can do this in datadriven but for continuous purpose, let's put it here
 	StopSoundEvent( startAttackSound, caster )
-	StartSoundEvent( startTraverseSound, caster )
-	
+    StartSoundEvent( startTraverseSound, caster )
+
 	-- Create projectile
 	local projectileTable =
 	{
@@ -100,7 +100,7 @@ function powershot_start_traverse( keys )
 		iVisionTeamNumber = caster:GetTeamNumber()
 	}
 	caster.powershot_projectileID = ProjectileManager:CreateLinearProjectile( projectileTable )
-	
+
 	-- Register units around caster
 	local units = FindUnitsInRadius( caster:GetTeamNumber(), caster:GetAbsOrigin(), caster, ability.powershot_radius,
 			DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
@@ -109,13 +109,13 @@ function powershot_start_traverse( keys )
 		ability.powershot_units_array[ index ] = v
 		ability.powershot_units_hit[ index ] = false
 	end
-	
+
 	-- Traverse
 	Timers:CreateTimer( function()
 			-- Traverse the point
 			ability.powershot_currentPos = ability.powershot_currentPos + ( ability.powershot_direction * ability.powershot_percent_movespeed/100 * ability.powershot_max_movespeed * 1/30 )
 			ability.powershot_traveled = ability.powershot_traveled + ability.powershot_max_movespeed * 1/30
-			
+
 			-- Loop through the units array
 			for k, v in pairs( ability.powershot_units_array ) do
 				-- Check if it never got hit and is in radius
@@ -138,15 +138,15 @@ function powershot_start_traverse( keys )
 					StartSoundEvent( "Hero_Windrunner.PowershotDamage", v )
 				end
 			end
-			
+
 			-- Check for nearby trees, destroy them if they exist
 			if GridNav:IsNearbyTree( ability.powershot_currentPos, ability.powershot_radius, true ) then
 				GridNav:DestroyTreesAroundPoint(ability.powershot_currentPos, ability.powershot_tree_width, false)
 			end
-			
+
 			-- Create visibility node
 			AddFOWViewer(caster:GetTeamNumber(), ability.powershot_currentPos, ability.powershot_vision_radius, ability.powershot_vision_duration, false)
-			
+
 			-- Check if damage point reach the maximum range, if so, delete the timer
 			if ability.powershot_traveled < ability.powershot_max_range then
 				return 1/30

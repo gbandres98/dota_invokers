@@ -50,7 +50,7 @@ function invoker_tornado_datadriven_on_spell_start(keys)
 
 	local projectile_information =
 	{
-		EffectName = "particles/units/heroes/hero_invoker/invoker_tornado.vpcf",
+		EffectName = "particles/invoker_tornado_qw.vpcf",
 		Ability = emp_unit_ability,
 		vSpawnOrigin = caster_origin,
 		fDistance = tornado_travel_distance,

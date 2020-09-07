@@ -32,7 +32,7 @@
 		"ability21"					"combo_breaker" 									//DDQ
 		"ability22"					"bloodseeker_rupture"								//EED
 		"ability23"					"windrunner_powershot_datadriven"			        //WWD
-		"ability24"					"kunkka_x_marks_the_spot"							//QQD
+		"ability24"					"spellshield"           							//QQD
 		"ability25"					"kunkka_return"										//QQD
 		"ability26"					"antimage_blink"									//QED
 		"ability27"			    	"puck_phase_shift"
