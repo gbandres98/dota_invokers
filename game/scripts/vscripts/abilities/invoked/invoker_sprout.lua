@@ -48,6 +48,8 @@ function CreateSprout(keys)
     local caster = keys.caster
     local ability = keys.ability
 
+    treeModel = "models/props_magic/bad_crystals003.vmdl"
+
     local duration = ability:GetLevelSpecialValueFor("duration", (ability:GetLevel() -1))
     local vision_range = ability:GetLevelSpecialValueFor("vision_range", (ability:GetLevel() -1))
     local trees = 7
@@ -81,8 +83,9 @@ function CreateSprout(keys)
         local sproutPositionRelative = Vector(heroToCursorVector.x * newXAxis.x + heroToCursorVector.y * newYAxis.x, heroToCursorVector.x * newXAxis.y + heroToCursorVector.y * newYAxis.y, caster:GetCenter().z)
         local sproutPosition = sproutPositionRelative + heroPosition
 
-        CreateTempTree(sproutPosition, duration)
-
+        --CreateTempTree(sproutPosition, duration)
+        CreateTempTreeWithModel(sproutPosition, duration,treeModel)
+        
     end
 
     AddFOWViewer(caster:GetTeam(), cursor, vision_range, duration, false)
