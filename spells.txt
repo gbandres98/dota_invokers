@@ -1,5 +1,5 @@
 QQQ - Cold Snap			        WWW - Concussive Shot		       	EEE - Sunstrike		        	DDD - Rearm
-QQW - Venge Stun		        WWQ - Tornado				        EEQ - Forge Spirit	        	DDQ - TODO: Combo breaker
+QQW - Venge Stun		        WWQ - Tornado				        EEQ - Forge Spirit	        	DDQ - Combo breaker
 QQE - Arboles			        WWE - Alacrity				        EEW - Chaos Meteor              DDW - Decrepify
-QQD - Counterspell con channel	WWD - (Shadow Poison) -> Powershot	EED - (Timelock) -> Lucky Shot	DDE - Rupture
+QQD - Counterspell con channel	WWD - Powershot	                    EED - Lucky Shot	            DDE - Rupture
 WED - Puck		            	QED - Blink			               	QWD - Lanza		            	QWE - Deafening Blast

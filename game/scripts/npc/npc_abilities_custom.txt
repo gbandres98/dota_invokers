@@ -16,23 +16,79 @@
 #base "abilities/invoker_base/quas_datadriven.kv"
 #base "abilities/invoker_base/wex_datadriven.kv"
 #base "abilities/invoked/combo_breaker.kv"
-
+#base "abilities/invoked/invoker_sprout_datadriven.kv"
+#base "abilities/invoked/windrunner_powershot_datadriven.kv"
 
 "DOTAAbilities"
 {
 	"Version"		"1"
 
-    "enigma_black_hole"
-    {
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "mars_spear"
+	{
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | ABILITY_BEHAVIOR_HIDDEN"
+
+		"AbilityCooldown"				"14.0"
+		"AbilityManaCost"				"0"
+
+        "AbilityCastPoint"				"0.05"
+
         "MaxLevel"                      "1"
-        "AbilityCastRange"				"475"
-        "AbilityChannelTime"			"3.0"
-        "AoERadius" 					"720"
-        "AbilityCooldown"				"160.0"
-        "AbilityDuration"               "3"
-        "AbilityManaCost"				"0"
-    }
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100"
+				"LinkedSpecialBonus"	"special_bonus_unique_mars_spear_bonus_damage"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"spear_speed"		"1400"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spear_width"		"125"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spear_vision"		"300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spear_range"		"1200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"activity_duration"		"1.7"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"2.8"
+				"LinkedSpecialBonus"	"special_bonus_unique_mars_spear_stun_duration"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.25"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_distance"	"75"
+			}
+		}
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_COLD_SNAP"
+	}
 
     "pugna_decrepify"
     {
@@ -41,6 +97,7 @@
         "AbilityCooldown"				"6.0"
         "AbilityManaCost"				"0"
         "AbilityCastRange"		        "1200"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_COLD_SNAP"
     }
 
     "tinker_rearm"
@@ -48,42 +105,40 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "MaxLevel"                      "1"
         "AbilityManaCost"				"0"
-        "AbilityChannelTime"			"1.5"
+        "AbilityCastPoint"				"0"
+        "AbilityChannelTime"			"2"
 
+        "AbilityChannelAnimation"        "ACT_DOTA_TELEPORT"
     }
 
     "pangolier_lucky_shot"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"7307"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "MaxLevel"                      "1"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"17"
+				"chance_pct"			"35"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2 3 4 5"
+				"duration"				"2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow"			"35"
+				"slow"			          "25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"			"3 4 5 6"
+				"armor"			        "4"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -108,54 +163,8 @@
                 "CalculateSpellDamageTooltip"	"0"
 			}
 		}
-    }
 
-    "shadow_demon_shadow_poison"
-    {
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel"                      "1"
-        "AbilityCooldown"				"2"
-        "AbilityManaCost"				"0"
-
-        "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stack_damage"			"105"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_multiply_stacks"	"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stack_damage"	"50"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"3000"
-			}
-			"06" //Damage that is applied every time shadow poison is applied.
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hit_damage"			"50"
-				"LinkedSpecialBonus"		"special_bonus_unique_shadow_demon_4"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-		}
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_COLD_SNAP"
     }
 
     "kunkka_x_marks_the_spot" //TODO: Remove?
@@ -184,6 +193,10 @@
         "MaxLevel"                      "1"
         "AbilityCooldown"				"6.0"
         "AbilityManaCost"				"0"
+
+        "AbilityCastPoint"				"0.4"
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_TORNADO"
     }
 
     "puck_phase_shift"
@@ -236,6 +249,8 @@
 				"customval_damage"		"35 45 55"
 			}
 		}
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_COLD_SNAP"
 	}
 
 	"skywrath_mage_concussive_shot"
@@ -274,10 +289,18 @@
 				"damage"			"540"
 			}
 		}
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_COLD_SNAP"
 	}
+
 	"kunkka_return"
 	{
 		"MaxLevel"						"1"
+	}
+
+    "mud_golem_hurl_boulder"
+	{
+		"AbilityCastAnimation"		"ACT_DOTA_ATTACK"
 	}
 
 }

@@ -145,7 +145,7 @@ function invoke( keys )
 		elseif num_quas_orbs == 2 and num_wex_orbs == 1 then
 			spell_to_be_invoked = "vengefulspirit_magic_missile"						--QQW
 		elseif num_quas_orbs == 2 and num_exort_orbs == 1 then
-			spell_to_be_invoked = "ice_wall_datadriven"									--QQE
+			spell_to_be_invoked = "invoker_sprout_datadriven"							--QQE
 		elseif num_wex_orbs == 3 then
 			spell_to_be_invoked = "skywrath_mage_concussive_shot"						--WWW
 		elseif num_wex_orbs == 2 and num_quas_orbs == 1 then
@@ -161,7 +161,7 @@ function invoke( keys )
 		elseif num_quas_orbs == 1 and num_wex_orbs == 1 and num_exort_orbs == 1 then
 			spell_to_be_invoked = "deafening_blast_datadriven"							--QWE
 		elseif num_durc_orbs == 1 and num_quas_orbs == 1 and num_wex_orbs == 1 then
-			spell_to_be_invoked = "enigma_black_hole"									--QWD
+			spell_to_be_invoked = "mars_spear"									        --QWD
 		elseif num_durc_orbs == 3 then
 			spell_to_be_invoked = "tinker_rearm"										--DDD
 		elseif num_durc_orbs == 2 and num_quas_orbs==1 then
@@ -171,9 +171,9 @@ function invoke( keys )
 		elseif num_durc_orbs == 2 and num_exort_orbs==1 then
 			spell_to_be_invoked = "bloodseeker_rupture"									--EDD
 		elseif num_exort_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "faceless_void_time_lock"								--EED
+			spell_to_be_invoked = "pangolier_lucky_shot"								--EED
 		elseif num_wex_orbs == 2 and num_durc_orbs==1 then
-			spell_to_be_invoked = "shadow_demon_shadow_poison"							--WWD
+			spell_to_be_invoked = "windrunner_powershot_datadriven"						--WWD
 		elseif num_quas_orbs == 2 and num_durc_orbs==1 then
 			spell_to_be_invoked = "kunkka_x_marks_the_spot"								--QQD
 		elseif num_durc_orbs == 1 and num_exort_orbs == 1 and num_quas_orbs == 1 then

@@ -25,13 +25,13 @@
 		"Ability14"					"forge_spirit_datadriven"
 		"Ability15"					"invoker_sprout_datadriven"
 		"Ability16"					"deafening_blast_datadriven"
-		"Ability17"					"enigma_black_hole"
+		"Ability17"					"mars_spear"
 		"ability18"					"tinker_rearm"										//DDD
-		"ability19"					"faceless_void_time_lock"							//QDD
+		"ability19"					"pangolier_lucky_shot"							    //QDD
 		"ability20" 				"pugna_decrepify"									//WDD
 		"ability21"					"combo_breaker" 									//DDQ
 		"ability22"					"bloodseeker_rupture"								//EED
-		"ability23"					"shadow_demon_shadow_poison"						//WWD
+		"ability23"					"windrunner_powershot_datadriven"			        //WWD
 		"ability24"					"kunkka_x_marks_the_spot"							//QQD
 		"ability25"					"kunkka_return"										//QQD
 		"ability26"					"antimage_blink"									//QED
