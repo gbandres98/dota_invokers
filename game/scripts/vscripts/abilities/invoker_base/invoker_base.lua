@@ -186,8 +186,11 @@ function invoke( keys )
         if spell_to_be_invoked and invoker_slot1 ~= spell_to_be_invoked then
             print(spell_to_be_invoked)
             caster:SwapAbilities(invoker_slot1, spell_to_be_invoked, false, true)
-            caster:FindAbilityByName(invoker_slot1):SetLevel(0)
-            caster:FindAbilityByName(spell_to_be_invoked):SetLevel(1)
+			if invoker_slot1 == "pangolier_lucky_shot" then
+				caster:FindAbilityByName(invoker_slot1):SetLevel(0)
+			end
+
+			caster:FindAbilityByName(spell_to_be_invoked):SetLevel(1)
         end
 
 	end
